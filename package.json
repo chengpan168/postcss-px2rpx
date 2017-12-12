@@ -1,0 +1,38 @@
+{
+  "name": "postcss-px2rpx",
+  "version": "1.0.0",
+  "description": "PostCSS px to rpx",
+  "main": "index.js",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "小程序",
+    "微信",
+    "px",
+    "rpx",
+    "relative"
+  ],
+  "author": "panwang.chengpw <chengpan168@126.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpan168/postcss-px2rpx"
+  },
+  "bugs": {
+    "url": "https://github.com/chengpan168/postcss-px2rpx/issues"
+  },
+  "homepage": "https://github.com/chengpan168/postcss-px2rpx",
+  "dependencies": {
+    "postcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^0.14.0",
+    "gulp-mocha": "^2.1.2"
+  },
+  "scripts": {
+    "test": "gulp"
+  }
+}
