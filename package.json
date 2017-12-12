@@ -1,5 +1,5 @@
 {
-  "name": "postcss-px2rpx",
+  "name": "wx-px2rpx",
   "version": "1.0.0",
   "description": "PostCSS px to rpx",
   "main": "index.js",
