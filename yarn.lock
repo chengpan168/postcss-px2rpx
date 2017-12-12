@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-amdefine@>=0.0.4:
-  version "1.0.1"
-  resolved "https://repo.3dker.cn/repository/npm/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
-
 ansi-gray@^0.1.1:
   version "0.1.1"
   resolved "https://repo.3dker.cn/repository/npm/ansi-gray/-/ansi-gray-0.1.1.tgz#2962cf54ec9792c48510a3deb524436861ef7251"
@@ -23,6 +19,12 @@ ansi-regex@^2.0.0:
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://repo.3dker.cn/repository/npm/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
+
+ansi-styles@^3.1.0:
+  version "3.2.0"
+  resolved "http://registry.npm.taobao.org/ansi-styles/download/ansi-styles-3.2.0.tgz#c159b8d5be0f9e5a6f346dab94f16ce022161b88"
+  dependencies:
+    color-convert "^1.9.0"
 
 ansi-wrap@0.1.0:
   version "0.1.0"
@@ -119,6 +121,14 @@ chalk@^1.0.0:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
+chalk@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.taobao.org/chalk/download/chalk-2.3.0.tgz#b5ea48efc9c1793dccc9b4767c93914d3f2d52ba"
+  dependencies:
+    ansi-styles "^3.1.0"
+    escape-string-regexp "^1.0.5"
+    supports-color "^4.0.0"
+
 cli-width@^1.0.1:
   version "1.1.1"
   resolved "https://repo.3dker.cn/repository/npm/cli-width/-/cli-width-1.1.1.tgz#a4d293ef67ebb7b88d4a4d42c0ccf00c4d1e366d"
@@ -134,6 +144,16 @@ clone@^0.2.0:
 clone@^1.0.0, clone@^1.0.2:
   version "1.0.3"
   resolved "https://repo.3dker.cn/repository/npm/clone/-/clone-1.0.3.tgz#298d7e2231660f40c003c2ed3140decf3f53085f"
+
+color-convert@^1.9.0:
+  version "1.9.1"
+  resolved "http://registry.npm.taobao.org/color-convert/download/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
+  dependencies:
+    color-name "^1.1.1"
+
+color-name@^1.1.1:
+  version "1.1.3"
+  resolved "http://registry.npm.taobao.org/color-name/download/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
 
 commander@0.6.1:
   version "0.6.1"
@@ -255,10 +275,6 @@ es6-map@^0.1.3:
     es6-set "~0.1.5"
     es6-symbol "~3.1.1"
     event-emitter "~0.3.5"
-
-es6-promise@~2.3.0:
-  version "2.3.0"
-  resolved "https://repo.3dker.cn/repository/npm/es6-promise/-/es6-promise-2.3.0.tgz#96edb9f2fdb01995822b263dd8aadab6748181bc"
 
 es6-set@~0.1.5:
   version "0.1.5"
@@ -682,6 +698,10 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
+has-flag@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/has-flag/download/has-flag-2.0.0.tgz#e8207af1cc7b30d446cc70b734b5e8be18f88d51"
+
 has-gulplog@^0.1.0:
   version "0.1.0"
   resolved "https://repo.3dker.cn/repository/npm/has-gulplog/-/has-gulplog-0.1.0.tgz#6414c82913697da51590397dafb12f22967811ce"
@@ -857,10 +877,6 @@ jade@0.26.3:
     commander "0.6.1"
     mkdirp "0.3.0"
 
-js-base64@~2.1.8:
-  version "2.1.9"
-  resolved "https://repo.3dker.cn/repository/npm/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
-
 js-yaml@^3.2.5:
   version "3.10.0"
   resolved "https://repo.3dker.cn/repository/npm/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
@@ -1000,7 +1016,7 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@^3.10.0, lodash@^3.3.1:
+lodash@^3.3.1:
   version "3.10.1"
   resolved "https://repo.3dker.cn/repository/npm/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -1237,13 +1253,13 @@ plur@^2.1.0:
   dependencies:
     irregular-plurals "^1.0.0"
 
-postcss@^4.1.13:
-  version "4.1.16"
-  resolved "https://repo.3dker.cn/repository/npm/postcss/-/postcss-4.1.16.tgz#4c449b4c8af9df3caf6d37f8e1e575d0361758dc"
+postcss@^6.0.0:
+  version "6.0.14"
+  resolved "http://registry.npm.taobao.org/postcss/download/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
   dependencies:
-    es6-promise "~2.3.0"
-    js-base64 "~2.1.8"
-    source-map "~0.4.2"
+    chalk "^2.3.0"
+    source-map "^0.6.1"
+    supports-color "^4.4.0"
 
 prelude-ls@~1.1.0, prelude-ls@~1.1.1, prelude-ls@~1.1.2:
   version "1.1.2"
@@ -1374,11 +1390,9 @@ sigmund@~1.0.0:
   version "1.0.1"
   resolved "https://repo.3dker.cn/repository/npm/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
 
-source-map@~0.4.2:
-  version "0.4.4"
-  resolved "https://repo.3dker.cn/repository/npm/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
-  dependencies:
-    amdefine ">=0.0.4"
+source-map@^0.6.1:
+  version "0.6.1"
+  resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
 sparkles@^1.0.0:
   version "1.0.0"
@@ -1432,6 +1446,12 @@ supports-color@1.2.0:
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://repo.3dker.cn/repository/npm/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
+
+supports-color@^4.0.0, supports-color@^4.4.0:
+  version "4.5.0"
+  resolved "http://registry.npm.taobao.org/supports-color/download/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
+  dependencies:
+    has-flag "^2.0.0"
 
 temp@^0.8.3:
   version "0.8.3"

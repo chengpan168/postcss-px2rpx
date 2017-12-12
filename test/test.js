@@ -13,7 +13,7 @@ var test = function (input, output, opts, done) {
   })
 }
 
-describe('postcss-px2rpx', function () {
+describe('wx-px2rpx', function () {
   
   it('replaces pixel values', function (done) {
     test('a{width: 200px;}', 'a{width: 200rpx;}', {}, done)

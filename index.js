@@ -1,41 +1,58 @@
 var postcss = require('postcss')
+var css = require('css')
 
-var DEFAULTS = {
-  base: 1
-}
-
-function nonForcedNumericRegex (number) {
-  return new RegExp(number + 'px(?!\\s*\\/\\*\\s*ignore\\s*\\*\\/)', 'g')
-}
-
-module.exports = postcss.plugin('postcss-px2rpx', function (opts) {
-  opts = Object.assign({}, DEFAULTS, opts)
+module.exports = postcss.plugin('wx-px2rpx', function (opts) {
   
-  var regex = /([\d\.]+)px(\s*\/\*\s*ignore\s*\*\/)?/g
+  var pxRegExp = /\b(\d+(\.\d+)?)px\b/
+  var rpxRegExp = /\b(\d+(\.\d+)?)rpx\b/
   
-  var convert = function (context) {
-    var replaceable = context.match(regex)
-    
-    if (replaceable) {
-      replaceable.forEach(function (value) {
-        var matches = regex.exec(value)
-        regex.lastIndex = 0
-        
-        if (!matches[2]) {
-          context = context.replace(
-            nonForcedNumericRegex(matches[1]), matches[1] / opts.base + 'rpx')
+  function processRules (rules) {
+    for (var i = 0; i < rules.length; i++) {
+      var rule = rules[i]
+      if (rule.type === 'media') {
+        processRules(rule.rules) // recursive invocation while dealing with media queries
+        continue
+      } else if (rule.type === 'keyframes') {
+        processRules(rule.keyframes) // recursive invocation while dealing with keyframes
+        continue
+      } else if (rule.type !== 'rule' && rule.type !== 'keyframe') {
+        continue
+      }
+      
+      var declarations = rule.declarations
+      for (var j = 0; j < declarations.length; j++) {
+        var declaration = declarations[j]
+        if (declaration.type !== 'declaration') {
+          continue
         }
-      })
+        // rpx, 不需要处理
+        if (rpxRegExp.test(declaration.value)) {
+          continue
+        }
+        // px 2 rpx
+        if (pxRegExp.test(declaration.value)) {
+          declaration.value = declaration.value.replace('px', 'rpx') // common transform
+        }
+      }
+      
+      // if the origin rule has no declarations, delete it
+      if (!rules[i].declarations.length) {
+        rules.splice(i, 1)
+        i--
+      }
     }
     
-    return context
   }
   
-  return function (css) {
-    css.eachInside(function (node) {
-      if (node.type === 'decl') {
-        node.value = convert(node._value ? node._value.raw : node.value)
-      }
-    })
+  return function (cssText, result) {
+    var oldCssText = cssText.toString()
+    
+    var astObj = css.parse(oldCssText)
+    processRules(astObj.stylesheet.rules)
+    
+    newCssText = css.stringify(astObj)
+    var newCssObj = postcss.parse(newCssText)
+    result.root = newCssObj
   }
+  
 })
