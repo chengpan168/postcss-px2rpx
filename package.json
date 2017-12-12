@@ -1,6 +1,6 @@
 {
   "name": "wx-px2rpx",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "PostCSS mini program px to rpx",
   "main": "index.js",
   "keywords": [
@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/chengpan168/postcss-px2rpx",
   "dependencies": {
+    "css": "^2.2.1",
     "postcss": "^6.0.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "css": "^2.2.1",
     "gulp": "^3.9.0"
   },
   "scripts": {
