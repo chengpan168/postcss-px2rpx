@@ -24,12 +24,16 @@
   },
   "homepage": "https://github.com/chengpan168/postcss-px2rpx",
   "dependencies": {
-    "css": "^2.2.1",
-    "postcss": "^6.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.3",
     "chai": "^3.0.0",
-    "gulp": "^3.9.0"
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-mocha": "^4.3.1",
+    "postcss": "^6.0.0"
   },
   "scripts": {
     "test": "gulp"
