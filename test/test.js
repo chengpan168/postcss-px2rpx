@@ -1,22 +1,46 @@
-var postcss = require('postcss')
-var expect = require('chai').expect
+const postcss = require('postcss')
+const { expect } = require('chai')
 
-var plugin = require('../')
+const plugin = require('../')
 
-var test = function (input, output, opts, done) {
-  postcss([plugin(opts)]).process(input).then(function (result) {
-    expect(result.css).to.eql(output)
-    expect(result.warnings()).to.be.empty
-    done()
-  }).catch(function (error) {
-    done(error)
-  })
+const test = (input, output, opts, done) => {
+  postcss([plugin(opts)])
+    .process(input)
+    .then((result) => {
+      expect(result.css).to.eql(output);
+      // eslint-disable-next-line no-unused-expressions
+      expect(result.warnings()).to.be.empty;
+      done();
+    })
+    .catch((error) => {
+      done(error);
+    })
 }
 
-describe('wx-px2rpx', function () {
-  
-  it('replaces pixel values', function (done) {
+describe('wx-px2rpx', () => {
+  it('replaces pixel values', (done) => {
     test('a{width: 200px;}', 'a{width: 200rpx;}', {}, done)
   })
-  
+
+  it('rpx not be replaced', (done) => {
+    test('a{width: 200rpx;}', 'a{width: 200rpx;}', {}, done)
+  })
+
+  it('set proportion: 2', (done) => {
+    test('a{width: 200px;}', 'a{width: 400rpx;}', { proportion: 2 }, done)
+  })
+
+  it('work in media', (done) => {
+    test(`@media screen and (max-width: 300px) {
+    page{with:100px}
+    body {
+        width: 200px;
+    }
+}`, `@media screen and (max-width: 300px) {
+    page{with:100rpx}
+    body {
+        width: 200rpx;
+    }
+}`, {}, done)
+  })
 })

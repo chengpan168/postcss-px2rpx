@@ -58,3 +58,6 @@ css 源码
   border-radius: 75rpx;
 }
 ```
+
+## 配置参数
+- proportion: 转换比例
