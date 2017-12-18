@@ -19,6 +19,13 @@ const test = (input, output, opts, done) => {
 
 describe('wx-px2rpx', () => {
   it('replaces pixel values', (done) => {
+    test('a{padding: 200px 10px;}', 'a{padding: 200rpx 10rpx;}', {}, done)
+  })
+  it('replaces pixel values', (done) => {
+    test('a{padding: 200px 10px 10px 10px;}', 'a{padding: 200rpx 10rpx 10rpx 10rpx;}', {}, done)
+  })
+  
+  it('replaces pixel values', (done) => {
     test('a{width: 200px;}', 'a{width: 200rpx;}', {}, done)
   })
 
