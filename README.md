@@ -61,3 +61,8 @@ css 源码
 
 ## 配置参数
 - proportion: 转换比例
+
+## Created By
+
+- [wangwang](https://github.com/chengpan168)
+- [jinker](https://github.com/jinker)
