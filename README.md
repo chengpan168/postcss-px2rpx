@@ -1,3 +1,5 @@
+
+
 # 小程序 px 2 rpx
 
 
@@ -60,7 +62,7 @@ css 源码
 ```
 
 ## 配置参数
-- proportion: 转换比例
+- proportion: 转换比例（默认 1）
 
 ## Created By
 
