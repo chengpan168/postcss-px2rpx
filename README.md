@@ -5,7 +5,7 @@
 
 ## 使用方法
 
-1. `npm install wx-px2rpx`  或者  `yarn install wx-px2rpx`
+1. `npm install wx-px2rpx`  或者  `yarn add wx-px2rpx`
 2. gulp 配置
 3. 更多功能后续开发。。。 
   ```
